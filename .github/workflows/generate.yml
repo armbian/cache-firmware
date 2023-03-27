@@ -40,3 +40,6 @@ jobs:
         id: firmware_full
         run: |
           bash ./compile.sh firmware-full SHARE_LOG=yes
+          bash ./compile.sh armbian-config SHARE_LOG=yes
+          bash ./compile.sh armbian-zsh SHARE_LOG=yes
+          bash ./compile.sh armbian-plymouth-theme SHARE_LOG=yes
