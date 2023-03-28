@@ -28,7 +28,7 @@ jobs:
         uses: actions/checkout@v3 # We don't need to clone git, really. A wget would suffice for GH-hosted runners, clone is better for self-hosted runners.
         with:
           repository: armbian/build #${{ github.repository_owner }}/armbian-build
-          ref: AR-1639
+          ref: AR-1620
           fetch-depth: 1
           clean: false # true is default. it *will* delete the hosts /dev if mounted inside.
 
@@ -40,6 +40,7 @@ jobs:
         id: firmware_full
         run: |
           bash ./compile.sh firmware-full SHARE_LOG=yes
-          bash ./compile.sh armbian-config SHARE_LOG=yes
-          bash ./compile.sh armbian-zsh SHARE_LOG=yes
-          bash ./compile.sh armbian-plymouth-theme SHARE_LOG=yes
+          #bash ./compile.sh armbian-config SHARE_LOG=yes
+          #bash ./compile.sh armbian-zsh SHARE_LOG=yes
+          #bash ./compile.sh armbian-plymouth-theme SHARE_LOG=yes
+          bash ./compile.sh fake-ubuntu-advantage-tools SHARE_LOG=yes
